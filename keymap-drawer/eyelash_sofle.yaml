@@ -202,7 +202,7 @@ layers:
   - $$mdi:mouse-scroll-wheel$$
   - '&mkp MB5'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-up-bold$$
   - KP ASTERISK
   - KP DIVIDE
   - {t: '$$mdi:transfer$$', type: trans}
@@ -215,7 +215,7 @@ layers:
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-right-click-outline$$
   - $$mdi:pan-up$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-down-bold$$
   - KP PLUS
   - {t: '7', h: '&', s: '&'}
   - {t: '8', h: '*', s: '*'}
@@ -228,7 +228,7 @@ layers:
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - $$mdi:pan-down$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-left-bold$$
   - KP MINUS
   - {t: '4', h: $}
   - {t: '5', h: '%', s: '%'}
@@ -241,7 +241,7 @@ layers:
   - FORWARD
   - $$mdi:pan-left$$
   - $$mdi:pan-right$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-right-bold$$
   - KP DOT
   - {t: '1', h: '!'}
   - {t: '2', h: '@'}
