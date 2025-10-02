@@ -25,14 +25,13 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <10>;       // 300
     delay-ms = <5>;                   // 0
 };
 
 &mmv {
     time-to-max-speed-ms = <1>;
-    acceleration-exponent = <0>;
+    acceleration-exponent = <1>;
 };
 
 / {
