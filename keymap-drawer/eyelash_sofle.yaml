@@ -41,7 +41,7 @@ layers:
   - '&DBTexclamation'
   - '&DBTquotes'
   - $$mdi:apple-keyboard-control$$
-  - Z
+  - {t: Z, h: Ctl+Z}
   - {t: X, h: Ctl+X}
   - {t: C, h: Ctl+C}
   - {t: V, h: Ctl+V}
@@ -97,7 +97,7 @@ layers:
   - OUT BLE
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB HUI
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - F4
@@ -110,14 +110,14 @@ layers:
   - RGB BRI
   - RGB EFF
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB HUD
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - F1
   - F2
   - F3
   - F12
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB TOG
   - $$mdi:volume-off$$
   - RGB BRD
   - RGB EFR
@@ -198,9 +198,9 @@ layers:
   SUPER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&mkp MB4'
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-scroll-wheel$$
-  - '&mkp MB5'
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - Gui+$$mdi:arrow-up-bold$$
   - KP ASTERISK
@@ -237,8 +237,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - BACK
-  - FORWARD
+  - '&mkp MB4'
+  - '&mkp MB5'
   - $$mdi:pan-left$$
   - $$mdi:pan-right$$
   - Gui+$$mdi:arrow-right-bold$$
@@ -328,6 +328,7 @@ layers:
 combos:
 - p: [14, 28, 40]
   k: '&soft_off'
+  l: [LOWER]
 - p: [41, 42]
   k: {t: '''', s: '"'}
 - p: [15, 16]
