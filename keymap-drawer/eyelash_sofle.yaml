@@ -47,7 +47,7 @@ layers:
   - {t: V, h: Ctl+V}
   - {t: B, h: Ctl+S}
   - $$mdi:arrow-right-bold$$
-  - N
+  - {t: N, h: Ctl+N}
   - M
   - '&DBTsemicolon'
   - '&DBTcolon'
@@ -63,7 +63,7 @@ layers:
   - {t: '$$mdi:backspace$$', h: SUPER}
   - {t: '$$mdi:backspace-reverse-outline$$', h: UPPER}
   - LOWER
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&key_repeat'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   LOWER:
   - $$mdi:progress-download$$
@@ -131,7 +131,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   UPPER:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: BASE, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -145,7 +145,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&pair_braces'
   - HOME
   - $$mdi:arrow-up-bold$$
   - END
@@ -158,20 +158,20 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&pair_parens'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - PgDn
   - Gui+$$mdi:arrow-left-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
+  - APPLICATION
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&pair_brackets'
   - Ctl+Sft+$$mdi:keyboard-tab$$
   - Ctl+$$mdi:keyboard-tab$$
   - Alt+$$mdi:keyboard-esc$$
@@ -196,7 +196,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   SUPER:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: BASE, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
