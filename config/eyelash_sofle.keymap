@@ -155,14 +155,14 @@
         compatible = "zmk,behavior-tap-dance";
         label = "DBTLAYER2";
         #binding-cells = <0>;
-        bindings = <&kp NUMBER_2>, <&sl 2>;
+        bindings = <&kp NUMBER_2>, <&tog 2>;
     };
 
     DBTlayer3: DBTlayer3 {
         compatible = "zmk,behavior-tap-dance";
         label = "DBTLAYER3";
         #binding-cells = <0>;
-        bindings = <&kp NUMBER_3>, <&sl 3>;
+        bindings = <&kp NUMBER_3>, <&tog 3>;
     };
 
     combos {
