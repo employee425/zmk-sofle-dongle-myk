@@ -173,16 +173,39 @@
     behaviors {
     };
 
+    macros {
+        pair_parens: pair_parens {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "PAIR_PARENS";
+        };
+
+        pair_brackets: pair_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+            label = "PAIR_BRACKETS";
+        };
+
+        pair_braces: pair_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+            label = "PAIR_BRACES";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer0 {
             bindings = <
-&kp ESC           &kp N1              &kp N2              &kp N3               &kp N4                  &kp N5                &kp UP_ARROW     &kp N6           &kp N7                   &kp N8                &kp N9            &kp N0           &kp DELETE
-&kp TAB           &kp Q               &kp W               &kp E                &kp R                   &longPress LC(T) T    &kp DOWN_ARROW   &kp Y            &kp U                    &kp I                 &kp O             &kp P            &DBTslash
-&kp LEFT_SHIFT    &HML LEFT_GUI A     &HML LEFT_ALT S     &HML LEFT_CONTROL D  &HMLshift LEFT_SHIFT F  &kp G                 &kp LEFT_ARROW   &kp H            &HMRshift RIGHT_SHIFT J  &HMR RIGHT_CONTROL K  &HMR RIGHT_ALT L  &DBTexclamation  &DBTquotes
-&kp LEFT_CONTROL  &longPress LC(Z) Z  &longPress LC(X) X  &longPress LC(C) C   &longPress LC(V) V      &longPress LC(S) B    &kp RIGHT_ARROW  &kp N            &kp M                    &DBTsemicolon         &DBTcolon         &DBTunderscore   &longPress PRINTSCREEN ESCAPE
-&kp C_MUTE        &kp CAPSLOCK        &mo 0               &mo 1                &mo 2                   &lt 3 SPACE           &kp ENTER        &lt 3 BACKSPACE  &lt 2 DELETE             &mo 1                 &none             &kp ENTER
+&kp ESC           &kp N1              &kp N2              &kp N3               &kp N4                  &kp N5                &kp UP_ARROW     &kp N6              &kp N7                   &kp N8                &kp N9            &kp N0           &kp DELETE
+&kp TAB           &kp Q               &kp W               &kp E                &kp R                   &longPress LC(T) T    &kp DOWN_ARROW   &kp Y               &kp U                    &kp I                 &kp O             &kp P            &DBTslash
+&kp LEFT_SHIFT    &HML LEFT_GUI A     &HML LEFT_ALT S     &HML LEFT_CONTROL D  &HMLshift LEFT_SHIFT F  &kp G                 &kp LEFT_ARROW   &kp H               &HMRshift RIGHT_SHIFT J  &HMR RIGHT_CONTROL K  &HMR RIGHT_ALT L  &DBTexclamation  &DBTquotes
+&kp LEFT_CONTROL  &longPress LC(Z) Z  &longPress LC(X) X  &longPress LC(C) C   &longPress LC(V) V      &longPress LC(S) B    &kp RIGHT_ARROW  &longPress LC(N) N  &kp M                    &DBTsemicolon         &DBTcolon         &DBTunderscore   &longPress PRINTSCREEN ESCAPE
+&kp C_MUTE        &kp CAPSLOCK        &mo 0               &mo 1                &mo 2                   &lt 3 SPACE           &kp ENTER        &lt 3 BACKSPACE     &lt 2 DELETE             &mo 1                 &key_repeat       &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -206,11 +229,11 @@
 
         layer2 {
             bindings = <
-&trans  &trans  &trans           &trans          &trans           &trans           &kp LG(UP_ARROW)     &trans  &trans      &trans     &trans         &trans  &trans
-&trans  &trans  &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &kp LG(DOWN_ARROW)   &trans  &kp TAB     &kp ENTER  &kp BACKSPACE  &trans  &trans
-&trans  &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp LG(LEFT_ARROW)   &trans  &trans      &trans     &trans         &trans  &trans
-&trans  &trans  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &kp LG(RIGHT_ARROW)  &trans  &kp ESCAPE  &trans     &kp DELETE     &trans  &trans
-&tog 2  &trans  &trans           &trans          &trans           &trans           &mkp LCLK            &trans  &trans      &trans     &trans         &trans
+&to 0   &trans          &trans           &trans          &trans           &trans           &kp LG(UP_ARROW)     &trans  &trans             &trans     &trans         &trans  &trans
+&trans  &pair_braces    &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &kp LG(DOWN_ARROW)   &trans  &kp TAB            &kp ENTER  &kp BACKSPACE  &trans  &trans
+&trans  &pair_parens    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp LG(LEFT_ARROW)   &trans  &kp K_APPLICATION  &trans     &trans         &trans  &trans
+&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &kp LG(RIGHT_ARROW)  &trans  &kp ESCAPE         &trans     &kp DELETE     &trans  &trans
+&to 2   &trans          &trans           &trans          &trans           &trans           &mkp LCLK            &trans  &trans             &trans     &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
@@ -219,11 +242,11 @@
 
         layer3 {
             bindings = <
-&trans  &trans     &trans          &trans          &trans           &trans             &mmv MOVE_UP     &kp KP_DIVIDE    &mkp LCLK                   &mkp MCLK               &mkp RCLK                        &trans     &trans
+&to 0   &trans     &trans          &trans          &trans           &trans             &mmv MOVE_UP     &kp KP_DIVIDE    &mkp LCLK                   &mkp MCLK               &mkp RCLK                        &trans     &trans
 &trans  &trans     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &mmv MOVE_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND N7     &longPress ASTERISK N8  &longPress LEFT_PARENTHESIS N9   &trans     &trans
 &trans  &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN     &mmv MOVE_LEFT   &kp KP_PLUS      &longPress DOLLAR NUMBER_4  &longPress PERCENT N5   &longPress CARET NUMBER_6        &trans     &trans
 &trans  &kp ENTER  &mkp MB4        &mkp MB5        &msc SCRL_LEFT   &msc SCRL_RIGHT    &mmv MOVE_RIGHT  &kp KP_MINUS     &longPress EXCL NUMBER_1    &longPress AT NUMBER_2  &longPress HASH NUMBER_3         &trans     &trans
-&tog 3  &trans     &trans          &trans          &trans           &trans             &trans           &kp ENTER        &mkp LCLK                   &kp KP_DOT              &longPress RIGHT_PARENTHESIS N0  &kp ENTER
+&to 3   &trans     &trans          &trans          &trans           &trans             &trans           &kp ENTER        &mkp LCLK                   &kp KP_DOT              &longPress RIGHT_PARENTHESIS N0  &kp ENTER
             >;
 
             sensor-bindings = <&scroll_encoder>;
