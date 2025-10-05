@@ -35,6 +35,8 @@
     hold-trigger-on-release;
 };
 
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE GRAVE TILDE DOUBLE_QUOTES MINUS>; };
+
 / {
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
