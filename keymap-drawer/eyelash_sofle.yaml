@@ -270,3 +270,7 @@ combos:
   k: '~'
 - p: [15, 17]
   k: ^
+- p: [9, 10]
+  k: $$mdi:alpha-w-box$$
+- p: [9, 8]
+  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
