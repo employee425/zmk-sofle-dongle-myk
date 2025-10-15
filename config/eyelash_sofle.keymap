@@ -198,6 +198,11 @@
             bindings = <&kp CARET>;
             key-positions = <15 17>;
         };
+
+        accent4 {
+            bindings = <&kp GRAVE>;
+            key-positions = <42 43>;
+        };
     };
 
     behaviors {
