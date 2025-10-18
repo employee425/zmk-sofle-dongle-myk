@@ -27,7 +27,11 @@
 &msc {
 };
 
-&mmv { trigger-period-ms = <5>; };
+&mmv {
+    trigger-period-ms = <5>;
+    time-to-max-speed-ms = <200>;
+    acceleration-exponent = <2>;
+};
 
 &lt {
     flavor = "balanced";
@@ -171,6 +175,13 @@
         label = "DBTLAYER4";
         #binding-cells = <0>;
         bindings = <&kp NUMBER_4>, <&tog 4>;
+    };
+
+    DBTlayer5: DBTlayer5 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "DBTLAYER5";
+        #binding-cells = <0>;
+        bindings = <&kp NUMBER_5>, <&tog 5>;
     };
 
     combos {
