@@ -6,7 +6,7 @@ layers:
   - '&DBTlayer2'
   - '&DBTlayer3'
   - '&DBTlayer4'
-  - {t: '5', s: '%'}
+  - '&DBTlayer5'
   - $$mdi:arrow-up-bold$$
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
@@ -396,7 +396,7 @@ combos:
   l: [LOWER]
 - p: [47, 48]
   k: {t: '''', s: '"'}
-- p: [46, 48]
+- p: [47, 23]
   k: '~'
 - p: [47, 49]
   k: ^
