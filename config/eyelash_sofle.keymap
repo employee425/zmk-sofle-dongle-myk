@@ -184,6 +184,13 @@
         bindings = <&kp NUMBER_5>, <&tog 5>;
     };
 
+    DBTlayer6: DBTlayer6 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "DBTLAYER6";
+        #binding-cells = <0>;
+        bindings = <&kp NUMBER_6>, <&tog 6>;
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -216,26 +223,21 @@
 
         undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <39 40>;
+            key-positions = <40 41>;
         };
 
         cut {
             bindings = <&kp LC(X)>;
-            key-positions = <40 41>;
+            key-positions = <41 42>;
         };
 
         copy {
             bindings = <&kp LC(C)>;
-            key-positions = <41 42>;
+            key-positions = <42 43>;
         };
 
         paste {
             bindings = <&kp LC(V)>;
-            key-positions = <42 43>;
-        };
-
-        save {
-            bindings = <&kp LC(S)>;
             key-positions = <43 44>;
         };
     };
@@ -278,7 +280,7 @@
 
         layer0 {
             bindings = <
-&kp ESC           &kp N1           &DBTlayer2         &DBTlayer3           &DBTlayer4              &DBTlayer5            &kp UP_ARROW     &kp N6              &kp N7                   &kp N8                &kp N9            &kp N0           &kp DELETE
+&kp ESC           &kp N1           &DBTlayer2         &DBTlayer3           &DBTlayer4              &DBTlayer5            &kp UP_ARROW     &DBTlayer6          &kp N7                   &kp N8                &kp N9            &kp N0           &kp DELETE
 &kp TAB           &kp Q            &kp W              &kp E                &kp R                   &longPress LC(T) T    &kp DOWN_ARROW   &kp Y               &kp U                    &kp I                 &kp O             &kp P            &DBTslash
 &DBTcapsword      &HML LEFT_GUI A  &HML LEFT_ALT S    &HML LEFT_CONTROL D  &HMLshift LEFT_SHIFT F  &kp G                 &kp LEFT_ARROW   &kp H               &HMRshift RIGHT_SHIFT J  &HMR RIGHT_CONTROL K  &HMR RIGHT_ALT L  &DBTexclamation  &DBTquotes
 &kp LEFT_CONTROL  &kp Z            &kp X              &kp C                &kp V                   &kp B                 &kp RIGHT_ARROW  &longPress LC(N) N  &kp M                    &DBTsemicolon         &DBTcolon         &DBTunderscore   &longPress PRINTSCREEN ESCAPE
@@ -353,6 +355,30 @@
             >;
 
             label = "COLEMAK";
+        };
+
+        layer6 {
+            bindings = <
+&kp ESC    &kp N1        &kp N2         &kp N3      &kp N4  &kp N5       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB    &kp Q         &kp W          &kp E       &kp R   &kp T        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp A         &kp S          &kp D       &kp F   &kp G        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp Z         &kp X          &kp C       &kp V   &kp B        &trans  &trans  &trans  &trans  &trans  &trans  &to 0
+&trans     &kp LEFT_GUI  &kp BACKSPACE  &kp DELETE  &mo 7   &kp SPACE    &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "ONEHAND";
+        };
+
+        layer7 {
+            bindings = <
+&kp ESC    &kp N6  &kp N7    &kp N8     &kp N9   &kp N0      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB    &kp Y   &kp U     &kp I      &kp O    &kp P       &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp H   &kp J     &kp K      &kp L    &kp SEMI    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &kp CAPS  &trans     &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "ONEHAND2";
         };
     };
 };
