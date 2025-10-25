@@ -420,7 +420,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - A
   - S
-  - D
+  - ONEHAND2
   - F
   - G
   - {t: '$$mdi:transfer$$', type: trans}
@@ -447,7 +447,7 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:backspace-reverse-outline$$
-  - ONEHAND2
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -485,7 +485,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - H
   - J
-  - K
+  - {type: held}
   - L
   - {t: ;, s: ':'}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -496,10 +496,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-control$$
+  - {t: ',', s: <}
+  - D
   - N
   - M
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -512,7 +512,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-caps$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
