@@ -208,7 +208,7 @@
 
         accent2 {
             bindings = <&kp TILDE>;
-            key-positions = <47 23>;
+            key-positions = <22 48>;
         };
 
         accent3 {
@@ -239,6 +239,11 @@
         paste {
             bindings = <&kp LC(V)>;
             key-positions = <43 44>;
+        };
+
+        lockscreen {
+            bindings = <&kp LG(L)>;
+            key-positions = <12 0>;
         };
     };
 
