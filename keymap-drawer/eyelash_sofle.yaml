@@ -542,3 +542,5 @@ combos:
   k: Ctl+V
 - p: [12, 0]
   k: Gui+L
+- p: [59, 34, 35, 36, 37]
+  k: '&codeinput'
