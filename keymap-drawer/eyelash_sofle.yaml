@@ -257,9 +257,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: held alternate}
   - $$mdi:mouse-left-click-outline$$
-  - KP DOT
-  - {t: '0', h: ), s: )}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '0', h: )}
+  - {t: ., s: '>'}
+  - {t: '=', s: +}
   QWERTY:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
