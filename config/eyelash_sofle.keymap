@@ -331,11 +331,11 @@
 
         layer3 {
             bindings = <
-&to 0   &trans     &trans          &trans          &trans           &trans             &mmv MOVE_UP     &kp KP_DIVIDE    &mkp LCLK                   &mkp MCLK               &mkp RCLK                        &trans     &trans
-&trans  &trans     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &mmv MOVE_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND N7     &longPress ASTERISK N8  &longPress LEFT_PARENTHESIS N9   &trans     &trans
-&trans  &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN     &mmv MOVE_LEFT   &kp KP_PLUS      &longPress DOLLAR NUMBER_4  &longPress PERCENT N5   &longPress CARET NUMBER_6        &trans     &trans
-&trans  &kp ENTER  &mkp MB4        &mkp MB5        &msc SCRL_LEFT   &msc SCRL_RIGHT    &mmv MOVE_RIGHT  &kp KP_MINUS     &longPress EXCL NUMBER_1    &longPress AT NUMBER_2  &longPress HASH NUMBER_3         &trans     &trans
-&trans  &trans     &trans          &trans          &trans           &trans             &trans           &kp ENTER        &mkp LCLK                   &kp KP_DOT              &longPress RIGHT_PARENTHESIS N0  &kp ENTER
+&to 0   &trans     &trans          &trans          &trans           &trans             &mmv MOVE_UP     &kp KP_DIVIDE    &mkp LCLK                   &mkp MCLK                              &mkp RCLK                       &trans     &trans
+&trans  &trans     &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &mmv MOVE_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND N7     &longPress ASTERISK N8                 &longPress LEFT_PARENTHESIS N9  &trans     &trans
+&trans  &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN     &mmv MOVE_LEFT   &kp KP_PLUS      &longPress DOLLAR NUMBER_4  &longPress PERCENT N5                  &longPress CARET NUMBER_6       &trans     &trans
+&trans  &kp ENTER  &mkp MB4        &mkp MB5        &msc SCRL_LEFT   &msc SCRL_RIGHT    &mmv MOVE_RIGHT  &kp KP_MINUS     &longPress EXCL NUMBER_1    &longPress AT NUMBER_2                 &longPress HASH NUMBER_3        &trans     &trans
+&trans  &trans     &trans          &trans          &trans           &trans             &trans           &kp ENTER        &mkp LCLK                   &longPress RIGHT_PARENTHESIS NUMBER_0  &kp DOT                         &kp EQUAL
             >;
 
             sensor-bindings = <&scroll_encoder>;
