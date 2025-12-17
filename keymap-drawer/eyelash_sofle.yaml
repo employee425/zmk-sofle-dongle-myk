@@ -233,7 +233,7 @@ layers:
   - {t: '4', h: $}
   - {t: '5', h: '%', s: '%'}
   - {t: '6', h: ^}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '=', s: +}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -256,10 +256,10 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: held alternate}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '0', h: )}
+  - {t: '0', h: ), s: )}
   - {t: ., s: '>'}
-  - {t: '=', s: +}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   QWERTY:
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
