@@ -245,11 +245,6 @@
             bindings = <&kp LG(L)>;
             key-positions = <12 0>;
         };
-
-        unlock {
-            bindings = <&codeinput>;
-            key-positions = <59 34 35 36 37>;
-        };
     };
 
     behaviors {
@@ -275,13 +270,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
             label = "PAIR_BRACES";
-        };
-
-        codeinput: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N8 &kp N2 &kp N5 &kp N2 &kp N2 &kp N9 &kp N7 &kp N8 &kp N3 &kp N9>;
-            label = "NEW_MACRO";
         };
     };
 
