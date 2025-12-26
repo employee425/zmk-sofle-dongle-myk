@@ -318,11 +318,11 @@
 
         layer2 {
             bindings = <
-&to 0   &trans          &trans           &trans          &trans           &trans           &kp LG(UP_ARROW)     &trans  &trans          &trans             &trans         &trans        &trans
-&trans  &pair_braces    &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &kp LG(DOWN_ARROW)   &trans  &kp ENTER       &kp TAB            &kp BACKSPACE  &trans        &trans
-&trans  &pair_parens    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp LG(LEFT_ARROW)   &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_GUI  &trans
-&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &kp LG(RIGHT_ARROW)  &trans  &kp ESCAPE      &kp K_APPLICATION  &kp DELETE     &trans        &trans
-&trans  &trans          &trans           &trans          &trans           &trans           &mkp LCLK            &trans  &trans          &trans             &trans         &trans
+&to 0   &trans          &trans           &trans          &trans           &trans           &kp LG(UP_ARROW)     &trans     &trans          &trans             &trans         &trans        &trans
+&trans  &pair_braces    &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &kp LG(DOWN_ARROW)   &kp SPACE  &kp ENTER       &kp TAB            &kp BACKSPACE  &trans        &trans
+&trans  &pair_parens    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp LG(LEFT_ARROW)   &trans     &kp LEFT_SHIFT  &kp LEFT_CONTROL   &kp LEFT_ALT   &kp LEFT_GUI  &trans
+&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &kp LG(RIGHT_ARROW)  &trans     &kp ESCAPE      &kp K_APPLICATION  &kp DELETE     &trans        &trans
+&trans  &trans          &trans           &trans          &trans           &trans           &mkp LCLK            &trans     &trans          &trans             &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
