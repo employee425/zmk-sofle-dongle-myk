@@ -151,7 +151,7 @@ layers:
   - END
   - PgUp
   - Gui+$$mdi:arrow-down-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:backspace$$', type: backspace}
