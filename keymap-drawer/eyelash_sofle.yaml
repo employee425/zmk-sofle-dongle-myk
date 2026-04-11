@@ -57,12 +57,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', h: LOWER}
-  - {t: APPLICATION, h: UPPER}
+  - UPPER
   - {t: '$$mdi:keyboard-space$$', h: SUPER}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', h: SUPER}
   - {t: '$$mdi:backspace-reverse-outline$$', h: UPPER}
-  - {t: REPEAT, h: LOWER}
+  - {t: '&key_repeat', h: LOWER}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   LOWER:
