@@ -217,9 +217,9 @@ layers:
   - $$mdi:pan-up$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - KP MULTIPLY
-  - {t: '7', h: '&', s: '&'}
-  - {t: '8', h: '*', s: '*'}
-  - {t: '9', h: (, s: (}
+  - {t: KP 7, h: '&'}
+  - {t: KP 8, h: '*'}
+  - {t: KP 9, h: (}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -230,9 +230,9 @@ layers:
   - $$mdi:pan-down$$
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - KP PLUS
-  - {t: '4', h: $}
-  - {t: '5', h: '%', s: '%'}
-  - {t: '6', h: ^}
+  - {t: KP 4, h: $}
+  - {t: KP 5, h: '%'}
+  - {t: KP 6, h: ^}
   - {t: '=', s: +}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -243,9 +243,9 @@ layers:
   - $$mdi:pan-right$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - KP MINUS
-  - {t: '1', h: '!'}
-  - {t: '2', h: '@'}
-  - {t: '3', h: '#'}
+  - {t: KP 1, h: '!'}
+  - {t: KP 2, h: '@'}
+  - {t: KP 3, h: '#'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: BASE, h: toggle}
@@ -256,7 +256,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: held alternate}
-  - {t: '0', h: ), s: )}
+  - {t: KP 0, h: )}
   - {t: ., s: '>'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
