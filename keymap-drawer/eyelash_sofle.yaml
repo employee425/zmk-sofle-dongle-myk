@@ -56,8 +56,8 @@ layers:
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - '&key_repeat'
-  - LOWER
-  - {t: '$$mdi:keyboard-return$$', h: UPPER}
+  - {t: '$$mdi:keyboard-return$$', h: LOWER}
+  - UPPER
   - {t: '$$mdi:keyboard-space$$', h: SUPER}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', h: SUPER}
@@ -252,7 +252,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: held alternate}
@@ -542,5 +542,5 @@ combos:
   k: Ctl+V
 - p: [12, 0]
   k: Gui+L
-- p: [55, 61]
+- p: [56, 60]
   k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
