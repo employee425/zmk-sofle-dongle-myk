@@ -54,7 +54,7 @@ layers:
   - '&DBTunderscore'
   - {t: '$$mdi:keyboard-esc$$', h: PRINTSCREEN}
   - $$mdi:volume-off$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&rgblayer 1 RGB_COLOR_HSB_VAL(0,100,50)'
   - '&key_repeat'
   - {t: '$$mdi:keyboard-return$$', h: LOWER}
   - UPPER
@@ -540,7 +540,7 @@ combos:
   k: Ctl+C
 - p: [43, 44]
   k: Ctl+V
-- p: [12, 0]
+- p: [0, 57]
   k: Gui+L
-- p: [56, 60]
+- p: [30, 31]
   k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
