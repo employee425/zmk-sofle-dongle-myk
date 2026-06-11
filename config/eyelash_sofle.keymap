@@ -7,11 +7,13 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+
 
 / {
     zip_scroll_scaler: zip_scroll_scaler {
@@ -285,8 +287,70 @@
         };
     };
 
-    behaviors {
+behaviors {
+    nav_word: nav_word {
+        compatible = "zmk,behavior-auto-layer";
+        #binding-cells = <1>;
+
+        /*
+         * Keeps layer active while using navigation keys.
+         * Good for your layer2 / UPPER nav setup.
+         */
+        continue-list = <
+            LEFT RIGHT UP DOWN
+            HOME END
+            PG_UP PG_DN
+            TAB BSPC DEL ESC
+        >;
+
+        ignore-modifiers;
     };
+
+    leader_main: leader_main {
+        compatible = "zmk,behavior-leader-key";
+        #binding-cells = <0>;
+
+        /*
+         * Output mode commands
+         * Leader → U S B = USB output
+         * Leader → B L E = BLE output
+         */
+        usb { sequence = <U S B>; bindings = <&out OUT_USB>; };
+        ble { sequence = <B L E>; bindings = <&out OUT_BLE>; };
+
+        /*
+         * Bluetooth profile selection
+         * Leader → B 0 / B 1 / ... / B 4
+         */
+        bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
+        bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
+        bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
+        bt3 { sequence = <B N3>; bindings = <&bt BT_SEL 3>; };
+        bt4 { sequence = <B N4>; bindings = <&bt BT_SEL 4>; };
+
+        /*
+         * Bluetooth maintenance
+         */
+        btc { sequence = <C L R>; bindings = <&bt BT_CLR>; };
+
+        /*
+         * System actions.
+         * Keep these on longer sequences so you do not accidentally nuke your flow.
+         */
+        boot  { sequence = <B O O T>; bindings = <&bootloader>; };
+        reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
+
+        /*
+         * Your existing PT-BR/accent macros.
+         * Avoid strict nested sequences like A and A O together;
+         * this module does not support strictly nested sequences.
+         */
+        pta  { sequence = <P T A>; bindings = <&ptbr_a>; };
+        pto  { sequence = <P T O>; bindings = <&ptbr_o>; };
+        atao { sequence = <A O>; bindings = <&ptbr_ao>; };
+        oesh { sequence = <O E>; bindings = <&ptbr_oes>; };
+    };
+};
 
     macros {
         pair_parens: pair_parens {
@@ -376,7 +440,7 @@
         layer1 {
             bindings = <
 &bootloader      &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4       &mmv MOVE_UP      &none   &kp CAPSLOCK  &kp KP_NUMLOCK  &kp SCROLLLOCK  &none    &bootloader
-&sys_reset       &bt BT_CLR       &bt BT_CLR_ALL   &trans           &trans        &trans             &mmv MOVE_DOWN    &none   &kp F7        &kp F8          &kp F9          &kp F10  &sys_reset
+&sys_reset       &bt BT_CLR       &bt BT_CLR_ALL   &leader_main          &trans        &trans             &mmv MOVE_DOWN    &none   &kp F7        &kp F8          &kp F9          &kp F10  &sys_reset
 &soft_off        &out OUT_USB     &out OUT_BLE     &trans           &trans        &rgb_ug RGB_HUI    &kp C_PREVIOUS    &none   &kp F4        &kp F5          &kp F6          &kp F11  &soft_off
 &rgb_ug RGB_TOG  &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &trans        &rgb_ug RGB_HUD    &kp C_NEXT        &none   &kp F1        &kp F2          &kp F3          &kp F12  &rgb_ug RGB_TOG
 &kp C_MUTE       &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &trans           &trans        &trans             &kp C_PLAY_PAUSE  &trans  &trans        &trans          &trans          &trans
@@ -392,7 +456,7 @@
 &trans  &trans          &trans           &trans          &trans           &trans           &ptbr_ao   &trans             &kp LG(LEFT)    &kp LG(DOWN)       &kp LG(UP_ARROW)  &kp LG(RIGHT)  &trans
 &trans  &pair_braces    &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &ptbr_a    &kp SPACE          &kp ENTER       &kp TAB            &kp BACKSPACE     &trans         &trans
 &trans  &pair_parens    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &ptbr_oes  &trans             &kp LEFT_SHIFT  &kp LEFT_CONTROL   &kp LEFT_ALT      &kp LEFT_GUI   &trans
-&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &ptbr_o    &trans             &kp ESCAPE      &kp K_APPLICATION  &kp DELETE        &trans         &trans
+&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &nav_word 2           &ptbr_o    &trans             &kp ESCAPE      &kp K_APPLICATION  &kp DELETE        &trans         &trans
 &to 0   &trans          &trans           &trans          &trans           &trans           &mkp LCLK  &kp LC(LA(COMMA))  &trans          &trans             &trans            &trans
             >;
 
@@ -403,7 +467,7 @@
         layer3 {
             bindings = <
 &trans  &trans             &trans          &mkp MCLK       &trans           &trans             &msc SCRL_UP     &kp KP_DIVIDE    &mkp LCLK                           &mkp MCLK                  &mkp RCLK                          &trans     &trans
-&trans  &trans             &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &msc SCRL_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND KP_N7          &longPress ASTERISK KP_N8  &longPress LEFT_PARENTHESIS KP_N9  &mo 10     &mo 9
+&trans  &num_word 3            &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &msc SCRL_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND KP_N7          &longPress ASTERISK KP_N8  &longPress LEFT_PARENTHESIS KP_N9  &mo 10     &mo 9
 &trans  &mo ACC_PRECISION  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN     &msc SCRL_LEFT   &kp KP_PLUS      &longPress DOLLAR KP_N4             &longPress PERCENT KP_N5   &longPress CARET KP_N6             &kp EQUAL  &trans
 &trans  &trans             &mkp MB4        &mkp MB5        &msc SCRL_LEFT   &msc SCRL_RIGHT    &msc SCRL_RIGHT  &kp KP_MINUS     &longPress EXCL KP_N1               &longPress AT KP_N2        &longPress HASH KP_N3              &trans     &trans
 &to 0   &trans             &trans          &trans          &sk LEFT_SHIFT   &trans             &kp ENTER        &kp ENTER        &longPress RIGHT_PARENTHESIS KP_N0  &kp DOT                    &trans                             &trans
