@@ -198,12 +198,11 @@
         compatible = "zmk,behavior-input-two-axis";
         label = "MMV_SLOW";
         #binding-cells = <1>;
-        x-input-code = <0>;
-        y-input-code = <1>;
-        time-to-max-speed-ms = <0>;
+        x-input-code = <15>;
+        y-input-code = <15>;
+        time-to-max-speed-ms = <1>;
         trigger-period-ms = <5>;
         delay-ms = <2>;
-        acceleration-exponent = <0>;
     };
 
     combos {
