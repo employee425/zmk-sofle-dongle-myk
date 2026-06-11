@@ -537,7 +537,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
-  - '&mmv_slow MOVE_UP(-150)'
+  - '&mmv_slow MOVE_Y(-150)'
   - $$mdi:mouse-right-click-outline$$
   - $$mdi:pan-up$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
@@ -549,9 +549,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - '&mmv_slow MOVE_LEFT(-150)'
-  - '&mmv_slow MOVE_DOWN(150)'
-  - '&mmv_slow MOVE_RIGHT(150)'
+  - '&mmv_slow MOVE_X(-150)'
+  - '&mmv_slow MOVE_Y(150)'
+  - '&mmv_slow MOVE_X(150)'
   - $$mdi:pan-down$$
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - KP PLUS
