@@ -242,7 +242,7 @@
         };
 
         accent2 {
-            bindings = <&kp TILDE>;
+            bindings = <&leader_main>;
             key-positions = <20 21>;
         };
 
@@ -305,6 +305,26 @@ behaviors {
 
         ignore-modifiers;
     };
+
+&num_word {
+    continue-list = <
+        KP_N0 KP_N1 KP_N2 KP_N3 KP_N4
+        KP_N5 KP_N6 KP_N7 KP_N8 KP_N9
+
+        KP_DOT
+        KP_PLUS
+        KP_MINUS
+        KP_MULTIPLY
+        KP_DIVIDE
+        KP_EQUAL
+
+        BSPC DEL
+        BACKSPACE DELETE
+        ENTER
+    >;
+
+    ignore-modifiers;
+};
 
     leader_main: leader_main {
         compatible = "zmk,behavior-leader-key";
@@ -429,7 +449,7 @@ behaviors {
 &kp TAB           &kp Q                                    &kp W            &kp E                &kp R                   &longPress LC(T) T    &kp DOWN_ARROW   &kp Y               &kp U                    &kp I                 &kp O             &kp P            &DBTslash
 &DBTcapsword      &HML LEFT_GUI A                          &HML LEFT_ALT S  &HML LEFT_CONTROL D  &HMLshift LEFT_SHIFT F  &kp G                 &kp LEFT_ARROW   &kp H               &HMRshift RIGHT_SHIFT J  &HMR RIGHT_CONTROL K  &HMR RIGHT_ALT L  &DBTexclamation  &DBTquotes
 &kp LEFT_CONTROL  &kp Z                                    &kp X            &kp C                &kp V                   &kp B                 &kp RIGHT_ARROW  &longPress LC(N) N  &kp M                    &DBTsemicolon         &DBTcolon         &DBTunderscore   &longPress PRINTSCREEN ESCAPE
-&kp C_MUTE        &rgblayer 1 RGB_COLOR_HSB_VAL(0,100,50)  &key_repeat      &lt 1 ENTER          &mo 2                   &lt 3 SPACE           &kp ENTER        &lt 3 BACKSPACE     &lt 2 DELETE             &mo 1                 &key_repeat       &trans
+&kp C_MUTE        &nav_word 2  &key_repeat      &lt 1 ENTER          &mo 2                   &lt 3 SPACE           &kp ENTER        &lt 3 BACKSPACE     &lt 2 DELETE             &mo 1                 &key_repeat       &num_word 3 
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -440,7 +460,7 @@ behaviors {
         layer1 {
             bindings = <
 &bootloader      &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4       &mmv MOVE_UP      &none   &kp CAPSLOCK  &kp KP_NUMLOCK  &kp SCROLLLOCK  &none    &bootloader
-&sys_reset       &bt BT_CLR       &bt BT_CLR_ALL   &leader_main          &trans        &trans             &mmv MOVE_DOWN    &none   &kp F7        &kp F8          &kp F9          &kp F10  &sys_reset
+&sys_reset       &bt BT_CLR       &bt BT_CLR_ALL   &trans           &trans        &trans             &mmv MOVE_DOWN    &none   &kp F7        &kp F8          &kp F9          &kp F10  &sys_reset
 &soft_off        &out OUT_USB     &out OUT_BLE     &trans           &trans        &rgb_ug RGB_HUI    &kp C_PREVIOUS    &none   &kp F4        &kp F5          &kp F6          &kp F11  &soft_off
 &rgb_ug RGB_TOG  &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &trans        &rgb_ug RGB_HUD    &kp C_NEXT        &none   &kp F1        &kp F2          &kp F3          &kp F12  &rgb_ug RGB_TOG
 &kp C_MUTE       &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &trans           &trans        &trans             &kp C_PLAY_PAUSE  &trans  &trans        &trans          &trans          &trans
@@ -456,7 +476,7 @@ behaviors {
 &trans  &trans          &trans           &trans          &trans           &trans           &ptbr_ao   &trans             &kp LG(LEFT)    &kp LG(DOWN)       &kp LG(UP_ARROW)  &kp LG(RIGHT)  &trans
 &trans  &pair_braces    &kp HOME         &kp UP_ARROW    &kp END          &kp PAGE_UP      &ptbr_a    &kp SPACE          &kp ENTER       &kp TAB            &kp BACKSPACE     &trans         &trans
 &trans  &pair_parens    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &ptbr_oes  &trans             &kp LEFT_SHIFT  &kp LEFT_CONTROL   &kp LEFT_ALT      &kp LEFT_GUI   &trans
-&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &nav_word 2           &ptbr_o    &trans             &kp ESCAPE      &kp K_APPLICATION  &kp DELETE        &trans         &trans
+&trans  &pair_brackets  &kp LC(LS(TAB))  &kp LC(TAB)     &kp LA(ESC)      &trans           &ptbr_o    &trans             &kp ESCAPE      &kp K_APPLICATION  &kp DELETE        &trans         &trans
 &to 0   &trans          &trans           &trans          &trans           &trans           &mkp LCLK  &kp LC(LA(COMMA))  &trans          &trans             &trans            &trans
             >;
 
@@ -467,7 +487,7 @@ behaviors {
         layer3 {
             bindings = <
 &trans  &trans             &trans          &mkp MCLK       &trans           &trans             &msc SCRL_UP     &kp KP_DIVIDE    &mkp LCLK                           &mkp MCLK                  &mkp RCLK                          &trans     &trans
-&trans  &num_word 3            &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &msc SCRL_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND KP_N7          &longPress ASTERISK KP_N8  &longPress LEFT_PARENTHESIS KP_N9  &mo 10     &mo 9
+&trans  &trans            &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP       &msc SCRL_DOWN   &kp KP_MULTIPLY  &longPress AMPERSAND KP_N7          &longPress ASTERISK KP_N8  &longPress LEFT_PARENTHESIS KP_N9  &mo 10     &mo 9
 &trans  &mo ACC_PRECISION  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN     &msc SCRL_LEFT   &kp KP_PLUS      &longPress DOLLAR KP_N4             &longPress PERCENT KP_N5   &longPress CARET KP_N6             &kp EQUAL  &trans
 &trans  &trans             &mkp MB4        &mkp MB5        &msc SCRL_LEFT   &msc SCRL_RIGHT    &msc SCRL_RIGHT  &kp KP_MINUS     &longPress EXCL KP_N1               &longPress AT KP_N2        &longPress HASH KP_N3              &trans     &trans
 &to 0   &trans             &trans          &trans          &sk LEFT_SHIFT   &trans             &kp ENTER        &kp ENTER        &longPress RIGHT_PARENTHESIS KP_N0  &kp DOT                    &trans                             &trans
