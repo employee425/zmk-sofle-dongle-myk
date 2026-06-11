@@ -54,7 +54,7 @@ layers:
   - '&DBTunderscore'
   - {t: '$$mdi:keyboard-esc$$', h: PRINTSCREEN}
   - $$mdi:volume-off$$
-  - '&rgblayer 1 RGB_COLOR_HSB_VAL(0,100,50)'
+  - '&nav_word 2'
   - '&key_repeat'
   - {t: '$$mdi:keyboard-return$$', h: LOWER}
   - UPPER
@@ -64,7 +64,7 @@ layers:
   - {t: '$$mdi:backspace-reverse-outline$$', h: UPPER}
   - LOWER
   - '&key_repeat'
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&num_word 3'
   LOWER:
   - $$mdi:progress-download$$
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -82,7 +82,7 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - $$mdi:bluetooth-off$$
   - BT CLR ALL
-  - '&leader_main'
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
@@ -175,7 +175,7 @@ layers:
   - Ctl+Sft+$$mdi:keyboard-tab$$
   - Ctl+$$mdi:keyboard-tab$$
   - Alt+$$mdi:keyboard-esc$$
-  - '&nav_word 2'
+  - {t: '$$mdi:transfer$$', type: trans}
   - '&ptbr_o'
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-esc$$
@@ -210,7 +210,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&num_word 3'
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-right-click-outline$$
@@ -722,7 +722,7 @@ combos:
 - p: [48, 47]
   k: {t: '''', s: '"'}
 - p: [20, 21]
-  k: '~'
+  k: '&leader_main'
 - p: [47, 49]
   k: ^
 - p: [48, 49]
