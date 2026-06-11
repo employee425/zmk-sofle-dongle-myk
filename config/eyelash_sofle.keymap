@@ -242,7 +242,7 @@
         };
 
         accent2 {
-            bindings = <&leader_main>;
+            bindings = <&kp TILDE>;
             key-positions = <20 21>;
         };
 
